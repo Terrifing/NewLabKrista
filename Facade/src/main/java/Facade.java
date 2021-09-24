@@ -1,8 +1,4 @@
-import Models.NewsModel;
-
-import javax.inject.Inject;
-
-public class Facade implements FacadeInterface{
+public class Facade implements FacadeInterface {
 
     private static News news = new News();
     private static Categories categories = new Categories();
@@ -15,8 +11,8 @@ public class Facade implements FacadeInterface{
         return news.getNews(number);
     }
 
-    public String addNews(Integer number, String title){
-        return news.addNews(number, title);
+    public String addNews(Integer number, String title, String categories){
+        return news.addNews(number, title, categories);
     }
 
     public String delNews(){

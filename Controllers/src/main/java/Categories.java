@@ -1,11 +1,4 @@
-import Models.CategoriesList;
-import Models.CategoriesModel;
-
-import javax.inject.Inject;
-import java.util.Dictionary;
-import java.util.Map;
-
-public class Categories implements CategoriesInterface{
+public class Categories implements CategoriesInterface {
 
     private CategoriesList categoriesList = new CategoriesList();
 

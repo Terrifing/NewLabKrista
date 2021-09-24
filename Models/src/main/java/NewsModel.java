@@ -1,15 +1,12 @@
-package Models;
-
-import java.util.HashMap;
-import java.util.Map;
-
 public class NewsModel {
     private Integer number;
     private String title;
+    private String categories;
 
-    public NewsModel(Integer number, String title){
+    public NewsModel(Integer number, String title, String categories){
         this.number = number;
         this.title = title;
+        this.categories = categories;
     }
 
     public Integer getNumber() {
@@ -26,5 +23,13 @@ public class NewsModel {
 
     public void setTitle(String title) {
         this.title = title;
+    }
+
+    public String getCategories() {
+        return categories;
+    }
+
+    public void setCategories(String categories) {
+        this.categories = categories;
     }
 }

@@ -1,10 +1,7 @@
-import Models.NewsModel;
-
-import javax.inject.Inject;
 import java.util.HashMap;
 import java.util.Map;
 
-public class News implements NewsInterface{
+public class News implements NewsInterface {
 
     private NewsModel newsModel;
     public static Map<Integer, String> dict = new HashMap<Integer, String>();
@@ -17,8 +14,8 @@ public class News implements NewsInterface{
         return "get All News";
     }
 
-    public String addNews(Integer number, String title) {
-        newsModel = new NewsModel(number, title);
+    public String addNews(Integer number, String title, String categories) {
+        newsModel = new NewsModel(number, title, categories);
         dict.put(newsModel.getNumber(), newsModel.getTitle());
         return "add News";
     }

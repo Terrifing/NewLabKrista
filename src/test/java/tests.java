@@ -1,17 +1,16 @@
 import org.junit.jupiter.api.Test;
 
-import java.util.concurrent.atomic.AtomicInteger;
-
-import static org.junit.jupiter.api.Assertions.*;
+import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertNotNull;
 
 public class tests {
     @Test
     void FacadeRequests (){
         FacadeInterface facade = new Facade();
         assertNotNull(facade, "newFacade");
-        assertEquals(facade.addNews(1, "add News"), "add News");
-        assertEquals(facade.addNews(2, "add News"), "add News");
-        assertEquals(facade.addNews(3, "add News"), "add News");
+        assertEquals(facade.addNews(1, "add News", "Sport"), "add News");
+        assertEquals(facade.addNews(2, "add News", "Sport"), "add News");
+        assertEquals(facade.addNews(3, "add News", "Sport"), "add News");
         assertEquals(facade.getNews(1), "add News");
         assertEquals(facade.getNews(2), "add News");
         assertEquals(facade.getNews(3), "add News");

@@ -1,5 +1,3 @@
-package Models;
-
 public class CategoriesModel {
     private Integer number;
     private String title;
