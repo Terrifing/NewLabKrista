@@ -1,3 +1,5 @@
+import java.util.Set;
+
 public class Facade implements FacadeInterface {
 
     private static News news = new News();
@@ -7,21 +9,25 @@ public class Facade implements FacadeInterface {
         return news.getAllNews();
     }
 
-    public String getNews(Integer number){
-        return news.getNews(number);
+    public String getOneNews(Integer number){return news.getOneNews(number);}
+
+    public String addNews(Integer number, String title, String categories, String author, String shortData){
+        return news.addNews(number, title, categories, author, shortData);
     }
 
-    public String addNews(Integer number, String title, String categories){
-        return news.addNews(number, title, categories);
+    public String delNews(Integer number){
+        return news.delNews(number);
     }
 
-    public String delNews(){
-        return news.delNews();
+    public String upgradeNews(Integer number, String title){
+        return news.upgradeNews(number, title);
     }
 
-    public String upgradeNews(){
-        return news.upgradeNews();
-    }
+    public String getShortData(Integer number){return news.getShortData(number);}
+
+    public Set<String> getAllAuthors(){return news.getAllAuthors();};
+
+
 
     public String getAllCategories(){
         return categories.getAllCategories();
@@ -31,12 +37,12 @@ public class Facade implements FacadeInterface {
         return categories.addCategories(number, title);
     }
 
-    public String upgradeCategories(){
-        return categories.upgradeCategories();
+    public String upgradeCategories(Integer number){
+        return categories.upgradeCategories(number);
     }
 
-    public String delCategories(){
-        return categories.delCategories();
+    public String delCategories(Integer number){
+        return categories.delCategories(number);
     }
 
 }
