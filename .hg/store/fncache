@@ -28,3 +28,12 @@ data/src/main/java/Categories.java.i
 data/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst.i
 data/src/main/java/Main.java.i
 data/README.i
+data/src/main/java/Facade/FacadeInterface.java.i
+data/src/main/java/Models/NewsModel.java.i
+data/src/main/java/Controller/NewsInterface.java.i
+data/src/main/java/Controller/Categories.java.i
+data/src/main/java/Models/CategoriesList.java.i
+data/src/main/java/Facade/Facade.java.i
+data/src/main/java/Controller/CategoriesInterface.java.i
+data/src/main/java/Models/CategoriesModel.java.i
+data/src/main/java/Controller/News.java.i

@@ -2,53 +2,33 @@ import java.util.*;
 
 public class News implements NewsInterface {
 
-    private NewsModel newsModel;
-    public static Map<Integer, String> dict = new HashMap<Integer, String>();
+    Factory model = Factory.getModel(1);
 
     public String getOneNews(Integer number){
-        String[] data = dict.get(number).split("/");
-        return "\n"+data[0]+"\n"+data[1]+"\n"+data[3]+"\n";
+        return model.getNewsDAO().getOneNews(number);
     }
 
     public String getAllNews(){
-        Collection<String> data = dict.values();
-        String result = "";
-        for(String elem: data){
-            String[] str = elem.split("/");
-            result += "\n"+str[0]+"\n"+str[1]+"\n"+str[3]+"\n";
-        }
-        return result;
+        return model.getNewsDAO().getAllNews();
     }
 
     public String addNews(Integer number, String title, String categories, String author, String shortData) {
-        newsModel = new NewsModel(number, title, categories, author, shortData);
-        String data = newsModel.getTitle() + "/" + newsModel.getAuthor() + "/"  + newsModel.getCategories() + "/"  + newsModel.getShortData();
-        dict.put(newsModel.getNumber(), data);
-        return "add News";
+        return model.getNewsDAO().addNews(number, title, categories, author, shortData);
     }
 
     public String upgradeNews(Integer number, String title){
-        String[] data = dict.get(number).split("/");
-        dict.remove(number);
-        dict.put(number, title + "/" + data[1] + "/" +  data[2] + "/" +  data[3]);
-        return "upgrade News";
+        return model.getNewsDAO().upgradeNews(number, title);
     }
 
     public String delNews(Integer number){
-        dict.remove(number);
-        return "del News";
+        return model.getNewsDAO().delNews(number);
     }
 
     public String getShortData(Integer number){
-        return dict.get(number).split("/")[3];
+        return model.getNewsDAO().getShortData(number);
     }
 
     public Set<String> getAllAuthors() {
-        Set<String> authors = new HashSet<>();
-        Collection<String> data = dict.values();
-        for(String elem: data){
-            authors.add(elem.split("/")[1]);
-        }
-        return authors;
+        return model.getNewsDAO().getAllAuthors();
     }
 }

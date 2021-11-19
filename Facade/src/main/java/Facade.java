@@ -9,7 +9,8 @@ public class Facade implements FacadeInterface {
         return news.getAllNews();
     }
 
-    public String getOneNews(Integer number){return news.getOneNews(number);}
+    public String getOneNews(Integer number){
+        return news.getOneNews(number);}
 
     public String addNews(Integer number, String title, String categories, String author, String shortData){
         return news.addNews(number, title, categories, author, shortData);
@@ -37,8 +38,8 @@ public class Facade implements FacadeInterface {
         return categories.addCategories(number, title);
     }
 
-    public String upgradeCategories(Integer number){
-        return categories.upgradeCategories(number);
+    public String upgradeCategories(Integer number, String title){
+        return categories.upgradeCategories(number, title);
     }
 
     public String delCategories(Integer number){
